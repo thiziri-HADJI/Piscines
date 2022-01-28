@@ -10,9 +10,11 @@
                 </div>
             </div>
             <div class="content">
-                <p>{{info.fields.adresse}}</p>
+                <p>{{info.fields.adresse}} {{info.fields.cp}} {{info.fields.commune}}</p>
                 <p>{{info.fields.tel}}</p>
-                <a href="url">page web</a>
+                <p>{{info.fields.web}}</p>
+                <button class="button is-info is-rounded" onclick="location.href = './piscinedetail';"> Détail </button>
+                <button class="button is-primary is-rounded"> Page de la piscine </button>
             </div>
         </div>
     </div>
@@ -33,13 +35,12 @@ export default {
         return {
             infos: [],
             errors: [],
-            url:"",
             mobileMenuActive: false
-        }
+        };
     },
 
   mounted() {
-    axios.get(`https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_piscines-nantes-metropole&q=&rows=15&facet=commune&facet=acces_pmr_equipt&facet=bassin_sportif&facet=pataugeoire&facet=toboggan&facet=bassin_apprentissage&facet=plongeoir&facet=solarium&facet=bassin_loisir&facet=accessibilite_handicap&facet=libre_service`)
+    axios.get(`https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_piscines-nantes-metropole&q=&rows=100&facet=commune&facet=acces_pmr_equipt&facet=bassin_sportif&facet=pataugeoire&facet=toboggan&facet=bassin_apprentissage&facet=plongeoir&facet=solarium&facet=bassin_loisir&facet=accessibilite_handicap&facet=libre_service`)
     .then(response => {
       this.infos = response.data.records
     })
@@ -49,3 +50,14 @@ export default {
   }
 }
 </script>
+
+<style>
+.card {
+    background-color: #f1efeff3;
+    margin-bottom: 2px;
+}
+.button {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+</style>
