@@ -12,9 +12,9 @@
             <div class="content">
                 <p>{{info.fields.adresse}} {{info.fields.cp}} {{info.fields.commune}}</p>
                 <p>{{info.fields.tel}}</p>
-                <p>{{info.fields.web}}</p>
-                <button class="button is-info is-rounded" onclick="location.href = './piscinedetail';"> Détail </button>
-                <button class="button is-primary is-rounded"> Page de la piscine </button>
+                <button class="button is-info is-rounded"> Détails </button>
+                <a class="button is-info is-rounded" v-on:click="pageDetails(info)" >Voir les détails</a>
+                <button class="button is-primary is-rounded"> <a :href="info.fields.web" target="out">Site web</a></button>
             </div>
         </div>
     </div>
@@ -33,10 +33,19 @@ export default {
     name: "Piscine",
     data() {
         return {
-            infos: [],
-            errors: [],
+            infos: {},
+            errors: {},
             mobileMenuActive: false
         };
+    },
+
+    methods: {
+      pageDetails(info){
+        this.$router.push({
+        name: "PiscineDetail",
+        params: { id: info.recordid },
+      });
+      }
     },
 
   mounted() {

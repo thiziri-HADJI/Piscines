@@ -21,7 +21,7 @@ const routes = [
     component: Piscine
   },
   {
-    path: '/piscinedetail',
+    path: '/piscinedetail/:id',
     name: 'PiscineDetail',
     component: PiscineDetail
   },
