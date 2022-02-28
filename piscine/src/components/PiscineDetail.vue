@@ -1,9 +1,10 @@
 <template>
        <div class="container">
          <div v-if="!isLoading">
-            <div v-for="inf in info" :key="inf" >
+            <div v-for="inf in info" :key="inf">
                    <h1 class="taille"><strong> {{inf.fields.nom_complet}}</strong> </h1>
                    <h2 class="taille2"> {{inf.fields.adresse}} {{inf.fields.cp}} {{inf.fields.commune}} </h2>
+                   <p class="taille3"> Coordonnées de la Piscine </p>
                    <table class="table is-striped is-fullwidth">
                      <thead>
                         <tr>
@@ -24,6 +25,7 @@
                       </tbody>
                    </table>
                    <p class="taille3"> Liste des équipements de la Piscine </p>
+                   <div class="scroll">
                    <table class="table is-bordered">
                      <thead>
                         <tr>
@@ -79,6 +81,7 @@
                          </tr>
                       </tbody>
                    </table>
+                   </div>
             </div>
          </div>
          <p v-else>Chargement en cours...</p>
@@ -134,6 +137,10 @@ import axios from "axios";
   margin-left: auto;
   margin-right: auto;
  }
+ .scroll {
+   overflow-x: scroll ;
+ }
+
  .accesPMROK {
    background-color :rgb(41, 221, 110)
  }

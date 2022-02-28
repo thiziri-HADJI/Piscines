@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
+        <h1 class="aPropos">
           À propos
         </h1>
         <h2 class="subtitle">
@@ -23,3 +23,11 @@ export default {
   name: "AboutPage",
 };
 </script>
+
+<style>
+
+.aPropos{
+  margin-top: -40px;
+  font-size: 35px;
+}
+</style>
