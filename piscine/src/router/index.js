@@ -23,6 +23,7 @@ const routes = [
   {
     path: '/piscinedetail/:id',
     name: 'PiscineDetail',
+    props: true,
     component: PiscineDetail
   },
 ]

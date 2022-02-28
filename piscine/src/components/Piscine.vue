@@ -12,7 +12,6 @@
             <div class="content">
                 <p>{{info.fields.adresse}} {{info.fields.cp}} {{info.fields.commune}}</p>
                 <p>{{info.fields.tel}}</p>
-                <button class="button is-info is-rounded"> Détails </button>
                 <a class="button is-info is-rounded" v-on:click="pageDetails(info)" >Voir les détails</a>
                 <button class="button is-primary is-rounded"> <a :href="info.fields.web" target="out">Site web</a></button>
             </div>
