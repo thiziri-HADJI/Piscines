@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AboutPage from '../components/AboutPage.vue'
 import HomePage from '../components/HomePage.vue'
 import Piscine from '../components/Piscine.vue'
+import Reservation from '../components/Reservation.vue'
 import PiscineDetail from '../components/PiscineDetail.vue'
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     name: 'PiscineDetail',
     props: true,
     component: PiscineDetail
+  },
+  {
+    path: '/reservation',
+    name: 'reservation',
+    component: Reservation
   },
 ]
 
