@@ -8,7 +8,7 @@
                    <table class="table is-striped is-fullwidth">
                      <thead>
                         <tr>
-                          <th>Telephone</th>
+                          <th>Téléphone</th>
                           <th>Site Web</th>
                           <th>Position maps</th>
                           <th>Accès PMR</th>
