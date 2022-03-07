@@ -10,6 +10,7 @@
                         <tr>
                           <th>Telephone</th>
                           <th>Site Web</th>
+                          <th>Position maps</th>
                           <th>Accès PMR</th>
                         </tr>
                       </thead>
@@ -17,6 +18,7 @@
                          <tr>
                             <td>{{inf.fields.tel}}</td>
                             <td><a :href="inf.fields.web" target="out">Page web</a></td>
+                            <td><a :href="redirectMap(inf)" target="out">map</a></td>
                             <td>
                               <p v-if="inf.fields.acces_pmr_equipt == 'OUI'" class="accesPMROK">{{inf.fields.acces_pmr_equipt}} </p>
                               <p v-else class="accesPMRKO"> {{inf.fields.acces_pmr_equipt}}</p>
@@ -102,6 +104,13 @@ import axios from "axios";
       info: {},
     };
    },
+
+    methods: {
+        redirectMap(info){
+       return  "https://maps.google.com/?q=" + info.fields.location[0] + "," + info.fields.location[1]
+      }
+    },
+
    mounted() {
     axios.get(`https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_piscines-nantes-metropole&q=&rows=100&facet=commune&facet=acces_pmr_equipt&facet=bassin_sportif&facet=pataugeoire&facet=toboggan&facet=bassin_apprentissage&facet=plongeoir&facet=solarium&facet=bassin_loisir&facet=accessibilite_handicap&facet=libre_service`)
     .then(response => {

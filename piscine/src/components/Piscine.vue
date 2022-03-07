@@ -13,7 +13,9 @@
                 <p>{{info.fields.adresse}} {{info.fields.cp}} {{info.fields.commune}}</p>
                 <p>{{info.fields.tel}}</p>
                 <a class="button is-info is-rounded" v-on:click="pageDetails(info)" >Voir les détails</a>
-                <button class="button is-primary is-rounded"> <a :href="info.fields.web" target="out">Site web</a></button>
+                <button class="button is-warning is-rounded"> <a :href="info.fields.web" target="out">Site web</a></button>
+                <a :href="redirectMap(info)" target="out"> <button class="button is-primary is-rounded"> Voir sur Maps</button>
+                </a>
             </div>
         </div>
     </div>
@@ -30,6 +32,9 @@ import axios from 'axios';
 
 export default {
     name: "Piscine",
+    props: {
+      info: {},
+  },
     data() {
         return {
             infos: {},
@@ -44,6 +49,9 @@ export default {
         name: "PiscineDetail",
         params: { id: info.recordid },
       });
+      },
+      redirectMap(info){
+       return  "https://maps.google.com/?q=" + info.fields.location[0] + "," + info.fields.location[1]
       }
     },
 
@@ -63,9 +71,10 @@ export default {
 .card {
     background-color: #f1efeff3;
     margin-bottom: 2px;
+    height: 100%;
 }
 .button {
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin: 10px;
 }
+
 </style>
