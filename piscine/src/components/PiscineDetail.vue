@@ -115,8 +115,6 @@ import axios from "axios";
     axios.get(`https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_piscines-nantes-metropole&q=&rows=100&facet=commune&facet=acces_pmr_equipt&facet=bassin_sportif&facet=pataugeoire&facet=toboggan&facet=bassin_apprentissage&facet=plongeoir&facet=solarium&facet=bassin_loisir&facet=accessibilite_handicap&facet=libre_service`)
     .then(response => {
           this.info = response.data.records.filter((record) => record.recordid == this.id);
-          console.log(this.info);
-          console.log(this.id);
           this.isLoading = false;
     })
     .catch(error => {

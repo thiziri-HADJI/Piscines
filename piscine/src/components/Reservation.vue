@@ -24,8 +24,8 @@
             </div>
             <div class="control2">
               <select>
-                <option v-for="info in infos" :key="info">
-                  {{ info }}
+                <option v-for="info in infos" :key="info.recordid">
+                  {{ info.fields.nom_complet }}
                 </option>
               </select>
             </div>
@@ -63,6 +63,9 @@
 </template>
 
 <script>
+
+import axios from 'axios';
+
 export default {
   name: "reservation",
   data() {
@@ -77,12 +80,12 @@ export default {
     listePiscines(info){
       this.$router.push({
         name: "Reservation",
-        params: { id: info.recordid },
+        params: { id: info.fields.nom_complet },
       });
     }
   },
 
-  mounted() {
+    mounted() {
     axios.get(`https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_piscines-nantes-metropole&q=&rows=100&facet=commune&facet=acces_pmr_equipt&facet=bassin_sportif&facet=pataugeoire&facet=toboggan&facet=bassin_apprentissage&facet=plongeoir&facet=solarium&facet=bassin_loisir&facet=accessibilite_handicap&facet=libre_service`)
     .then(response => {
       this.infos = response.data.records
@@ -92,6 +95,7 @@ export default {
     })
   }
 };
+
 </script>
 <style>
 .titre{
