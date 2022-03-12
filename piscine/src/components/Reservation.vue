@@ -2,8 +2,7 @@
       <div class="reservation">
         <div class="card">
         <div class = "card-body">
-          
-          <label class="titre">Vous souhaitez reserver ?</label>
+          <label class="titre">Souhaitez vous réserver une séance baignade ?</label>
           <div class="field">
             <label class="label">Nom</label>
             <div class="control">
@@ -134,7 +133,8 @@ export default {
 .control7{
   text-align: left;
   margin-top: 25px;
-  margin-left: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 field is-grouped{

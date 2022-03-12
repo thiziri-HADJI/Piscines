@@ -18,7 +18,7 @@
                          <tr>
                             <td>{{inf.fields.tel}}</td>
                             <td><a :href="inf.fields.web" target="out">Page web</a></td>
-                            <td><a :href="redirectMap(inf)" target="out">map</a></td>
+                            <td><a :href="redirectMap(inf)" target="out">google map</a></td>
                             <td>
                               <p v-if="inf.fields.acces_pmr_equipt == 'OUI'" class="accesPMROK">{{inf.fields.acces_pmr_equipt}} </p>
                               <p v-else class="accesPMRKO"> {{inf.fields.acces_pmr_equipt}}</p>

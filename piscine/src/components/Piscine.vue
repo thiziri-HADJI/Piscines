@@ -12,9 +12,9 @@
             <div class="content">
                 <p>{{info.fields.adresse}} {{info.fields.cp}} {{info.fields.commune}}</p>
                 <p>{{info.fields.tel}}</p>
-                <a class="button is-info is-rounded" v-on:click="pageDetails(info)" >Voir les détails</a>
+                <a class="button is-info is-rounded" v-on:click="pageDetails(info)" >Détails</a>
                 <button class="button is-warning is-rounded"> <a :href="info.fields.web" target="out">Site web</a></button>
-                <a :href="redirectMap(info)" target="out"> <button class="button is-primary is-rounded"> Voir sur Maps</button>
+                <a :href="redirectMap(info)" target="out"> <button class="button is-primary is-rounded"> Google Maps</button>
                 </a>
             </div>
         </div>
