@@ -5,6 +5,7 @@ import MapPage from '../components/MapPage.vue'
 import Piscine from '../components/Piscine.vue'
 import Reservation from '../components/Reservation.vue'
 import PiscineDetail from '../components/PiscineDetail.vue'
+import SearchPage from '../components/SearchPage.vue'
 
 
 const routes = [
@@ -38,6 +39,11 @@ const routes = [
     path: '/map',
     name: 'Map',
     component: MapPage
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: SearchPage
   },
 ]
 
