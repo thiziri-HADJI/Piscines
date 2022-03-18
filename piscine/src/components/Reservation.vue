@@ -6,14 +6,14 @@
           <div class="field">
             <label class="label">Nom</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Text input">
+              <input class="input" type="text" placeholder="Text input" v-model="nom">
             </div>
           </div>
 
            <div class="field">
             <label class="label">Prénom</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Text input">
+              <input class="input" type="text" placeholder="Text input" v-model="prenom"> 
             </div>
           </div>
 
@@ -22,7 +22,7 @@
               <label class="label">Piscine</label>
             </div>
             <div class="control2">
-              <select>
+              <select v-model="piscine">
                 <option v-for="info in infos" :key="info.recordid">
                   {{ info.fields.nom_complet }}
                 </option>
@@ -35,7 +35,7 @@
               <label class="label">Pour</label>
             </div>
             <div class="control4">
-              <select>
+              <select v-model="prix">
                   <option>Enfant</option>
                   <option>Adulte</option>
                 </select>
@@ -47,13 +47,13 @@
               <label class="label">Date</label>
             </div>
             <div class="control6">
-              <input type="datetime-local">
+              <input type="datetime-local" v-model="date">
             </div>
           </div>
 
           <div class="field is-grouped">
             <div class="control7">
-              <button class="button is-link">Reserver</button>
+              <button class="button is-link" v-on:click="messageReserv">Reserver</button>
             </div>
           </div>
         </div>
@@ -81,6 +81,12 @@ export default {
         name: "Reservation",
         params: { id: info.fields.nom_complet },
       });
+    },
+    messageReserv: function() {
+      // `this` fait référence à l'instance de Vue à l'intérieur de `methods`
+      alert('Bonjour ' + this.prenom + ' ' + this.nom + ' !\n\n' +
+       'Vous avez réservé une séance dans la piscine : \n' + this.piscine + ' \n' +
+       'Pour un ' + this.prix + ' le ' + this.date + ' \n\n' + 'merci d\'en prendre note ;) ')
     }
   },
 
