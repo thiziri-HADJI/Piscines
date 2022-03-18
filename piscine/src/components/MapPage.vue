@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <l-map style="height:100vh" :zoom="zoom" :center="center">
+    <l-map style="height:90vh" :zoom="zoom" :center="center">
       <l-tile-layer :url="url"></l-tile-layer>
       <l-marker v-for="marker in markers" :key="marker.recordid" :lat-lng="marker.location" @click="clickedMarker(marker.location)">
         <l-popup v-if="clicked">
@@ -11,6 +11,11 @@
           <img src="../../public/assets/img/dot.png" width="40"/>
         </l-icon>
       </l-marker>
+      <l-marker :lat-lng="geoMarkerLocation">
+        <l-icon>
+          <img src="../../public/assets/img/locator.png" width="30"/>
+        </l-icon>
+      </l-marker>
     </l-map>
   </div>
 </template>
@@ -19,6 +24,7 @@
 import "leaflet/dist/leaflet.css";
 import {LMap, LTileLayer, LMarker, LPopup, LIcon} from "@vue-leaflet/vue-leaflet";
 import axios from "axios";
+import {Geolocation, Permissions, PermissionType} from "@capacitor/core";
 
 export default {
   name: "MapContainer",
@@ -38,10 +44,15 @@ export default {
       zoom: 12,
       markers: new Array(),
       clicked: false,
+      geoMarkerLocation: new Array(),
+      permission: {},
+      coordinates: {},
     };
   },
   mounted() {
     this.getPiscines();
+    this.getMyPosition();
+    this.watchPosition();
   },
   methods: {
     getPiscines() {
@@ -65,6 +76,23 @@ export default {
     clickedMarker(location) {
       this.info = this.infos.filter((record) => record.fields.location == location)[0];
       this.clicked = true;
+    },
+    //méthode capacitor
+    async getMyPosition() {
+      this.coordinates = await Geolocation.getCurrentPosition();
+      this.permission = await Permissions.query({
+        name: PermissionType.Geolocation,
+      });
+        this.geoMarkerLocation[0] = this.coordinates.coords.latitude;
+        this.geoMarkerLocation[1] = this.coordinates.coords.longitude;
+    },
+    //méthode capacitor
+    watchPosition() {
+      Geolocation.watchPosition({},
+         (position) => {    
+            this.geoMarkerLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+          }
+      );
     },
   },
 };

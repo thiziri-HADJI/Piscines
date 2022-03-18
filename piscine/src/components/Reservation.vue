@@ -53,7 +53,7 @@
 
           <div class="field is-grouped">
             <div class="control7">
-              <button class="button is-link" v-on:click="messageReserv">Reserver</button>
+              <button class="button is-link" @click="messageReserv">Reserver</button>
             </div>
           </div>
         </div>
@@ -70,8 +70,6 @@ export default {
   data() {
     return {
       infos:{},
-      nextComposterId: 1,
-      composters: new Array(),
     };
   },
 
