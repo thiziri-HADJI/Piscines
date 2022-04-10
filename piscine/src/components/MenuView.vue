@@ -16,9 +16,9 @@
     <div class="navbar-start">
       <router-link class="navbar-item" to="/"> Accueil </router-link>
       <router-link class="navbar-item" to="/piscine"> Liste des piscines </router-link>
-      <router-link class="navbar-item" to="/map"> Map </router-link>
+      <router-link class="navbar-item" to="/map"> Carte </router-link>
       <router-link class="navbar-item" to="/reservation"> Réservation </router-link>
-      <router-link class="navbar-item" to="/search"> Recherche Avancée</router-link>
+      <router-link class="navbar-item" to="/search"> Recherche avancée</router-link>
     </div>
 
     <div class="navbar-end">
