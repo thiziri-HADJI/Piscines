@@ -15,6 +15,17 @@ Plugin Capacitor n°1 : Splash Screen - Animation d'image "splash"
 Plugin Capacitor n°2 : Geolocation - Position de l'appareil  
 
 ## Déploiement sur ordinateur
+1) Télécharger ou cloner le code
+2) Ouvrir un terminal et se placer dans le repertoire (piscine) de l'application téléchargée
+3) Lancer la commande : 
+```
+npm install
+```
+4) Lancer la commande : 
+```
+npm run serve
+```
+5) Enjoy ;) 
 
 ## Déploiement sur téléphone Android
 1) Telecharger le fichier apk du git <br/>
