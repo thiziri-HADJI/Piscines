@@ -1,5 +1,5 @@
 <template>
-  <div class="card-filters">
+  <div class="card">
     <p class="card-header-title">Filtres des piscines :</p>
     <!--1ere ligne de filtre-->
     <div class="columns">
@@ -119,26 +119,25 @@
     </div>
   </div>
   <!--Résultats de la recherche-->
-  <div class="resultat">
-    <div class="card">
-      <p class="card-header-title">Les piscines répondant aux critères :</p>
-      <div class="card-content">
-        <div class="content">
-          <div v-for="inf in infos" :key="inf.fields.nom_complet">
-            <div v-if="inf.fields.acces_pmr_equipt == picked1 ||
-              inf.fields.bassin_loisir == picked2 ||
-              inf.fields.bassin_sportif == picked3 || 
-              inf.fields.bassin_apprentissage == picked4 ||
-              inf.fields.pataugeoire == picked5 ||
-              inf.fields.solarium == picked6 ||
-              inf.fields.toboggan == picked7 || 
-              inf.fields.plongeoir == picked8 "><li>{{inf.fields.nom_complet}}</li> 
-            </div>
+  <div class="card">
+    <p class="card-header-title">Les piscines répondant aux critères :</p>
+    <div class="card-content">
+      <div class="content">
+        <div v-for="inf in infos" :key="inf.fields.nom_complet">
+          <div v-if="inf.fields.acces_pmr_equipt == picked1 ||
+            inf.fields.bassin_loisir == picked2 ||
+            inf.fields.bassin_sportif == picked3 || 
+            inf.fields.bassin_apprentissage == picked4 ||
+            inf.fields.pataugeoire == picked5 ||
+            inf.fields.solarium == picked6 ||
+            inf.fields.toboggan == picked7 || 
+            inf.fields.plongeoir == picked8 "><li>{{inf.fields.nom_complet}}</li> 
           </div>
         </div>
       </div>
     </div>
   </div>
+  
 
   <input class="button is-danger is-outlined" type="button" 
   onclick='window.location.reload(false)' value="Réinitialiser les filtres"/>  
@@ -189,7 +188,7 @@ export default {
 </script>
 
 <style>
-  .card-filters {
+  .card {
       background-color: #f1efeff3;
       margin-bottom: 20px;
       height: 100%;
@@ -197,12 +196,6 @@ export default {
   }
   .card-header-title{
     font-size: 20px;
-  }
-  .card-results {
-      background-color: #f1efeff3;
-      margin-bottom: 20px;
-      height: 100%;
-      border-radius: 0.25rem;
   }
   .content{
     text-align: left;

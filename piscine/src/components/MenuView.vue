@@ -22,7 +22,7 @@
       </div>
 
       <div class="navbar-end">
-        <router-link class="navbar-item" to="/about"> A propos </router-link>
+        <router-link class="navbar-item" to="/about"> À propos </router-link>
         <a class="navbar-item">
           Created by TRD :)
         </a>
