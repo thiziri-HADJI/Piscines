@@ -13,6 +13,16 @@ Plugin Capacitor n°1 : Splash Screen - Animation d'image "splash"
 <br/>
 <br/>
 Plugin Capacitor n°2 : Geolocation - Position de l'appareil  
+
 ## Déploiement sur ordinateur
 
 ## Déploiement sur téléphone Android
+Telecharger le fichier apk du git 
+Le déplacer sur son téléphone (ou téléchargement depuis le téléphone)
+Une fois télécharger cliquer dessus pour l'installer
+    Un pop up se lancera la première fois pour autoriser les applications inconnus : 
+    <img src="https://drive.google.com/drive/u/0/my-drive/Screenshot_20220410-150616_Settings.jpg" width="350"> 
+    Il faudra autoriser
+    Revenir en arrière et lancer le téléchargement en cliquant dessus
+Ouvrir l'application et
+Enjoy ;)
