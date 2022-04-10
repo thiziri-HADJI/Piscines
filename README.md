@@ -17,12 +17,12 @@ Plugin Capacitor n°2 : Geolocation - Position de l'appareil
 ## Déploiement sur ordinateur
 
 ## Déploiement sur téléphone Android
-Telecharger le fichier apk du git 
-Le déplacer sur son téléphone (ou téléchargement depuis le téléphone)
-Une fois télécharger cliquer dessus pour l'installer
-    Un pop up se lancera la première fois pour autoriser les applications inconnus : 
-    <img src="https://drive.google.com/drive/u/0/my-drive/Screenshot_20220410-150616_Settings.jpg" width="350"> 
-    Il faudra autoriser
-    Revenir en arrière et lancer le téléchargement en cliquant dessus
-Ouvrir l'application et
-Enjoy ;)
+1) Telecharger le fichier apk du git <br/>
+2) Le déplacer sur son téléphone (ou téléchargement depuis le téléphone) <br/>
+3) Une fois télécharger cliquer dessus pour l'installer <br/>
+    a) Un pop up se lancera la première fois pour autoriser les applications inconnues : <br/>
+    <img src="https://user-images.githubusercontent.com/60882032/162620226-a1470efe-4e57-4f62-8f8b-b32f9a1403cd.jpg" width="200"> <br/>
+    b) Il faudra l'autoriser <br/>
+    c) Revenir en arrière et lancer le téléchargement en cliquant dessus <br/>
+4) Ouvrir l'application <br/>
+5) Enjoy ;)
