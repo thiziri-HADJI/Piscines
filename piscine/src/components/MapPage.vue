@@ -99,7 +99,7 @@ export default {
 </script>
 
 <style>
-.popup {
-  color: #001aff;
-}
+  .popup {
+    color: #001aff;
+  }
 </style>

@@ -6,11 +6,12 @@
           À propos
         </h1>
         <h2 class="subtitle">
-            <p>
-      Pour des informations sur le code source,<br>
-      cliquer sur ce lien
-      <a href="https://github.com/thiziri-HADJI/Piscines" target="_blank" rel="noopener">github</a>.
-            </p> <br>
+          <p>
+            Pour des informations sur le code source,
+            <br>
+            cliquer sur ce lien
+            <a href="https://github.com/thiziri-HADJI/Piscines" target="_blank" rel="noopener">github</a>.
+          </p> <br>
         </h2>
       </div>
       <img src="../../public/assets/img/logo.png"> 
@@ -25,9 +26,8 @@ export default {
 </script>
 
 <style>
-
-.aPropos{
-  margin-top: -40px;
-  font-size: 35px;
-}
+  .aPropos{
+    margin-top: -40px;
+    font-size: 35px;
+  }
 </style>
