@@ -1,149 +1,148 @@
 <template>
-      <div class="reservation">
-        <div class="card">
-        <div class = "card-body">
-          <label class="titre">Quelle piscine choisir ?</label>
-          <div class="field has-addons">
-            <div class="control11">
-              <label class="label">Accès PMR</label>
-            </div>
-            <div class="control">
-               <div id="v-model-radiobutton">
-                    <input type="radio" id="PMR-oui" value="OUI" v-model="picked1" />
-                        <label for="PMR-oui"> Oui </label>
-                    <input type="radio" id="PMR-non" value="NON" v-model="picked1" />
-                        <label for="PMR-non"> Non </label>
-                        <br />
-                        <span>Choix : {{ picked1 }}</span>
-                </div>
-            </div>
-             <div class="control13">
-              <label class="label">Bassin de Loisir</label>
-            </div>
-            <div class="control">
-               <div id="v-model-radiobutton">
-                    <input type="radio" id="BL-oui" value="OUI" v-model="picked2" />
-                        <label for="BL-oui"> Oui </label>
-                    <input type="radio" id="BL-non" value="NON" v-model="picked2" />
-                        <label for="BL-non"> Non </label>
-                        <br />
-                        <span>Choix : {{ picked2 }}</span>
-                </div>
-            </div>
-          </div>
+        <div class="card-filters">
+          <p class="card-header-title">Filtres des piscines :</p>
+            <!--1ere ligne de filtre-->
+            <div class="columns">
+              <div class="column">  
+                  <label class="label">Accès PMR :</label> 
+                  <div class="control">
+                    <label class="radio">
+                      <input type="radio" id="PMR-oui" value="OUI" v-model="picked1" />
+                      Oui 
+                    </label>
+                    <label class="radio">
+                      <input type="radio" id="PMR-non" value="NON" v-model="picked1" />
+                      Non 
+                    </label>
+                  </div>
+              </div>
 
-            <div class="field has-addons">
-            <div class="control11">
-              <label class="label">Bassin sportif</label>
-            </div>
-            <div class="control">
-               <div id="v-model-radiobutton">
+             <div class="column">          
+                <label class="label">Bassin de Loisir :</label>
+                <div class="control">
+                    <label class="radio">
+                      <input type="radio" id="BL-oui" value="OUI" v-model="picked2" />
+                      Oui 
+                    </label>
+                    <label class="radio">
+                      <input type="radio" id="BL-non" value="NON" v-model="picked2" />
+                      Non 
+                    </label>
+                  </div>
+             </div>
+
+             <div class="column">          
+                <label class="label">Bassin sportif :</label>
+                <div class="control">
+                    <label class="radio">
                     <input type="radio" id="BS-oui" value="OUI" v-model="picked3" />
-                        <label for="BS-oui"> Oui </label>
+                      Oui 
+                    </label>
+                    <label class="radio">
                     <input type="radio" id="BS-non" value="NON" v-model="picked3" />
-                        <label for="BS-non"> Non </label>
-                        <br />
-                        <span>Choix : {{ picked3 }}</span>
-                </div>
-            </div>
-            <div class="control13">
-              <label class="label">Bassin d'apprentissage</label>
-            </div>
-            <div class="control">
-               <div id="v-model-radiobutton">
-                    <input type="radio" id="BA-oui" value="OUI" v-model="picked4" />
-                        <label for="BA-oui"> Oui </label>
-                    <input type="radio" id="BA-non" value="NON" v-model="picked4" />
-                        <label for="BA-non"> Non </label>
-                        <br />
-                        <span>Choix : {{ picked4 }}</span>
-                </div>
-            </div>
-          </div>
+                      Non 
+                    </label>
+                  </div>
+             </div>
 
-          <div class="field has-addons">
-            <div class="control11">
-              <label class="label">Pataugeoire</label>
-            </div>
-            <div class="control">
-               <div id="v-model-radiobutton">
-                    <input type="radio" id="P-oui" value="OUI" v-model="picked5" />
-                        <label for="P-oui"> Oui </label>
-                    <input type="radio" id="P-non" value="NON" v-model="picked5" />
-                        <label for="P-non"> Non </label>
-                        <br />
-                        <span>Choix : {{ picked5 }}</span>
-                </div>
-            </div>
-            <div class="control13">
-              <label class="label">Solarium</label>
-            </div>
-            <div class="control">
-               <div id="v-model-radiobutton">
-                    <input type="radio" id="S-oui" value="OUI" v-model="picked6" />
-                        <label for="S-oui"> Oui </label>
-                    <input type="radio" id="S-non" value="NON" v-model="picked6" />
-                        <label for="S-non"> Non </label>
-                        <br />
-                        <span>Choix : {{ picked6 }}</span>
-                </div>
-            </div>
+             <div class="column">          
+                <label class="label">Bassin d'apprentissage :</label>
+                <div class="control">
+                    <label class="radio">
+                      <input type="radio" id="BL-oui" value="OUI" v-model="picked4" />
+                      Oui 
+                    </label>
+                    <label class="radio">
+                      <input type="radio" id="BL-non" value="NON" v-model="picked4" />
+                      Non 
+                    </label>
+                  </div>
+             </div>        
           </div>
+          <!--2eme ligne de filtre-->
+          <div class="columns">
+              <div class="column">  
+                  <label class="label">Pataugeoire :</label> 
+                  <div class="control">
+                    <label class="radio">
+                      <input type="radio" id="P-oui" value="OUI" v-model="picked5" />
+                      Oui 
+                    </label>
+                    <label class="radio">
+                      <input type="radio" id="P-non" value="NON" v-model="picked5" />
+                      Non 
+                    </label>
+                  </div>
+              </div>
 
-            <div class="field has-addons">
-            <div class="control11">
-              <label class="label">Toboggan</label>
-            </div>
-            <div class="control">
-               <div id="v-model-radiobutton">
+             <div class="column">          
+                <label class="label">Solarium :</label>
+                <div class="control">
+                    <label class="radio">
+                      <input type="radio" id="S-oui" value="OUI" v-model="picked6" />
+                      Oui 
+                    </label>
+                    <label class="radio">
+                      <input type="radio" id="S-non" value="NON" v-model="picked6" />
+                      Non 
+                    </label>
+                  </div>
+             </div>
+
+             <div class="column">          
+                <label class="label">Toboggan :</label>
+                <div class="control">
+                    <label class="radio">
                     <input type="radio" id="T-oui" value="OUI" v-model="picked7" />
-                        <label for="T-oui"> Oui </label>
+                      Oui 
+                    </label>
+                    <label class="radio">
                     <input type="radio" id="T-non" value="NON" v-model="picked7" />
-                        <label for="T-non"> Non </label>
-                        <br />
-                        <span>Choix : {{ picked7 }}</span>
-                </div>
-            </div>
-            <div class="control13">
-              <label class="label">Plongeoir</label>
-            </div>
-            <div class="control">
-               <div id="v-model-radiobutton">
-                    <input type="radio" id="PL-oui" value="OUI" v-model="picked8" />
-                        <label for="PL-oui"> Oui </label>
-                    <input type="radio" id="PL-non" value="NON" v-model="picked8" />
-                        <label for="PL-non"> Non </label>
-                        <br />
-                        <span>Choix : {{ picked8 }}</span>
-                </div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
+                      Non 
+                    </label>
+                  </div>
+             </div>
 
+             <div class="column">          
+                <label class="label">Plongeoir :</label>
+                <div class="control">
+                    <label class="radio">
+                      <input type="radio" id="PL-oui" value="OUI" v-model="picked8" />
+                      Oui 
+                    </label>
+                    <label class="radio">
+                      <input type="radio" id="PL-non" value="NON" v-model="picked8" />
+                      Non 
+                    </label>
+                  </div>
+             </div>    
+          </div>
+      </div>
+      <!--Résultats de la recherche-->
       <div class="resultat">
         <div class="card">
-            <div class = "card-body">
-                <label class="titre">Les piscines répondant aux critères ?</label>
-                 <div v-for="inf in infos" :key="inf.fields.nom_complet">
-                      <div v-if="inf.fields.acces_pmr_equipt == picked1 ||
+            <p class="card-header-title">Les piscines répondant aux critères :</p>
+            <div class="card-content">
+              <div class="content">
+                <div v-for="inf in infos" :key="inf.fields.nom_complet">
+                    <div v-if="inf.fields.acces_pmr_equipt == picked1 ||
                       inf.fields.bassin_loisir == picked2 ||
                       inf.fields.bassin_sportif == picked3 || 
                       inf.fields.bassin_apprentissage == picked4 ||
                       inf.fields.pataugeoire == picked5 ||
                       inf.fields.solarium == picked6 ||
                       inf.fields.toboggan == picked7 || 
-                      inf.fields.plongeoir == picked8 "> {{inf.fields.nom_complet}} </div>
-                 </div>
+                      inf.fields.plongeoir == picked8 "><li>{{inf.fields.nom_complet}}</li> 
+                    </div>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
       </div>
-      <div class="field is-grouped">
-            <div class="control17">
-              <input class="button is-link" type="button" onclick='window.location.reload(false)' value="Rafraichir la liste"/>
-            </div>
-    </div>
+
+      <input class="button is-danger is-outlined" type="button" 
+       onclick='window.location.reload(false)' value="Réinitialiser les filtres"/>  
+
 </template>
 
 <script>
@@ -190,31 +189,25 @@ export default {
 
 </script>
 <style>
-.titre{
-  font-size: 40px;
+.card-filters {
+    background-color: #f1efeff3;
+    margin-bottom: 20px;
+    height: 100%;
+    border-radius: 0.25rem;
 }
-
-.control{
-    margin-right: auto;
-    
+.card-header-title{
+  font-size: 20px;
 }
-
-.control11{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1px;
+.card-results {
+    background-color: #f1efeff3;
+    margin-bottom: 20px;
+    height: 100%;
+    border-radius: 0.25rem;
 }
-
-.control13{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.control17{
-  text-align: left;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
+.content{
+   text-align: left;
+   color: black;
+   margin-left: 15px;
 }
 
 </style>
